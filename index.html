@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/theme.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/src/main.ts" defer></script>
+    <script type="module" src="/src/theme.ts" defer></script>
+    <script type="module" src="/src/open_folder.ts" defer></script>
+</head>
+
+<body>
+
+    <app-menu>
+        <button id="button-settings" title="Open settings (CTRL+,)">⚙</button>
+        <button id="button-save-as" title="Save file at new location (CRTL+S)">Save As</button>
+        <button id="button-open-file" title="Open a file (CTRL+O)">Open File</button>
+        <button id="button-open-folder" title="Open a folder WIP (CTRL+SHIFT+O)">Open Folder</button>
+        <file-path title="Copy path to clipboard (CTRL+SHIFT+C)">Open some file</file-path>
+        <button id="button-toggle-markdown" title="Toggle markdown formatting (CTRL+M)">Toggle MD</button>
+    </app-menu>
+
+    <app-container>
+        <file-list></file-list>
+        <main>
+            <line-number></line-number>
+            <textarea id="text-area"></textarea>
+            
+            <formatted-text class="hidden"></formatted-text>
+        </main>
+
+        <settings-container class="hidden">
+            <h1 class="settings-h1-theme">Theme</h1>
+            <p>Personalize rotes to your liking!</p>
+            <section class="horizontal">
+                <section class="vertical">
+                    <h2>Flavour</h2>
+                    <p>Change the general theme of the app, Latte is light theme, while Frappé, Macchiato and Mocha are different variations of dark theme.</p>
+                    <select name="flavour" id="select-flavour">
+                        <option value="latte">Latte</option>
+                        <option value="frappe">Frappé</option>
+                        <option value="macchiato">Macchiato</option>
+                        <option selected="true" value="mocha">Mocha</option>
+                    </select>
+                </section>
+                <section class="vertical">
+                    <h2>Accent Color</h2>
+                    <p>Change the accent color of rotes. It can be seen in places like buttons or links.</p>
+                    <select name="accent-color" id="select-accent-color">
+                        <option value="rosewater">Rosewater</option>
+                        <option value="flamingo">Flamingo</option>
+                        <option value="pink">Pink</option>
+                        <option selected="true" value="mauve">Mauve</option>
+                        <option value="red">Red</option>
+                        <option value="maroon">Maroon</option>
+                        <option value="peach">Peach</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="green">Green</option>
+                        <option value="teal">Teal</option>
+                        <option value="sky">Sky</option>
+                        <option value="sapphire">Sapphire</option>
+                        <option value="blue">Blue</option>
+                        <option value="lavender">Lavender</option>
+                    </select>
+                </section>
+                <section class="vertical">
+                    <h2>Fonts</h2>
+                    <p>Change fonts used in app.</p>
+                    <section class="horizontal">
+                        <section class="vertical">
+                            <h3>Normal</h3>
+                            <select name="normal" id="select-font-normal">
+                                <option selected="true" value="Inter" style="font-family: Inter;">Inter</option>
+                                <option value="Szczur" style="font-family: Szczur;">Szczur</option>
+                            </select>
+                        </section>
+                        <section class="vertical">
+                            <h3>Monospace</h3>
+                            <select name="monospace" id="select-font-monospace">
+                                <option selected="true" value="JetBrains Mono">JetBrains Mono</option>
+                            </select>
+                        </section>
+                    </section>
+                    <hr>
+                    <h3>Editor font</h3>
+                    <p>Use monospace font for editor?</p>
+                    <div class="radio-container">
+                        <input type="radio" checked id="radio-monospace-false" name="radio-monospace" value="false"><label for="radio-monospace-false">No, use <span style="font-family: var(--normal-font); color: var(--accent);">normal font</span>.</label>
+                        <br>
+                        <input type="radio" id="radio-monospace-true" name="radio-monospace" value="true"><label for="radio-monospace-true">Yes, use <span style="font-family: var(--monospace-font); color: var(--accent);">monospace font</span>.</label>
+                    </div>
+                </section>
+            </section>
+        </settings-container>
+    </app-container>
+    
+    
+</body>
+
+</html>
