@@ -145,7 +145,7 @@ Contributions are always welcome and mean a lot! ♡ Here's how you can help:
 
 # 🧻 License
 
-**rotes** is shared under the MIT License - see LICENSE for details.
+**rotes** is shared under the MIT License - see [LICENSE](/LICENSE) for details.
 
 > [!Note]
 > The license is all that's legally required, but if you're able to, a little visible credit means the world to me - a mention in your README, about page, or anywhere that fits ♡ Linking back to this repo would be amazing too, but no pressure at all!
